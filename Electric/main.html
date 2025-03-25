@@ -1,59 +1,602 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manvi Enterprises</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <style>
+    .section {
+      display: none;
+    }
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Manvi Enterprises</title>
-  <!-- link css file  -->
-  <link rel="stylesheet" href="./assets/css/style.css" />
-  <link rel="stylesheet" href="./assets/css/madia.css" />
-  <!-- link fontaosm cdn  -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
-  <!-- link bootsrap css file  -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" />
-</head>
-<style>
+    .active {
+      display: block;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html,
+    body {
+      scroll-behavior: smooth;
+    }
+    /* header section start  */
+    header {
+      position: fixed;
+      width: 100%;
+      box-shadow: 1px 2px 5px #ddd;
+      background-color: #fff;
+      z-index: 999;
+    }
+    #navbarNav {
+      flex-grow: 0;
+    }
+    .navbar-brand img {
+      width: 100%;
+    }
+    header .nav-item {
+      font-weight: bold;
+      margin-right: 10%;
+    }
 
-  .section {
-    display: none;
-  }
+    /* header section end  */
 
-  .active {
-    display: block;
-  }
-  
-</style>
+    /* home section start  */
+    #home-section {
+      background-image: url(../images/1.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 100%;
+      height: 100vh;
+      padding-top: 10%;
+    }
+    .home-img img {
+      height: 75vh;
+      object-fit: fill;
+    }
+    .home-content {
+      margin-top: 20%;
+    }
+    .home-content h2 {
+      font-size: 50px;
+    }
+    .home-content h2 span {
+      color: rgb(7, 197, 172);
+    }
+    .home-btn .btn01 {
+      background-color: rgb(7, 197, 172);
+      font-size: 16px;
+      padding: 10px 30px;
+      border-radius: 0;
+    }
 
-<body>
-  <header>
-    <nav class="navbar navbar-expand-lg">
-      <div class="container">
-        <a class="navbar-brand" href="#"><img style="width: 150px;" src="./assets/images/logos.png" alt="///" /></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" onclick="showSection('home')">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link"onclick="showSection('about')">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" onclick="showSection('services')">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link"onclick="showSection('contact')">Contact</a>
-            </li>
-          </ul>
+    .home-btn .btn01:hover {
+      transition: all 0.3s ease-in-out;
+      background-color: black;
+    }
+
+    .home-btn .btn02 {
+      font-size: 16px;
+      padding: 10px 30px;
+      border-radius: 0;
+      background-color: #fff;
+      color: rgb(7, 197, 172);
+    }
+    .home-btn .btn02:hover {
+      transition: all 0.3s ease-in-out;
+      background-color: rgb(7, 197, 172);
+      color: #fff;
+    }
+    /* home section start  */
+
+    /* our section start  */
+    #our-sevrice {
+      padding: 5% 0 3% 0;
+      position: relative;
+      width: 100%;
+    }
+    .our-img01 {
+      z-index: -1;
+      position: absolute;
+      background-image: url(../images/advt.png);
+      background-repeat: no-repeat;
+      bottom: 0%;
+      width: 16%;
+      height: 20rem;
+      right: 0;
+    }
+    .out-title h4 {
+      color: rgb(7, 197, 172);
+    }
+    .out-title h2 {
+      font-size: 50px;
+    }
+    .card01 {
+      position: relative;
+    }
+    .card01::after {
+      position: absolute;
+      content: "";
+      width: 2px;
+      height: 30%;
+      background-color: aquamarine;
+      right: 5%;
+      top: 3%;
+    }
+    .card01:hover {
+      box-shadow: 2px 2px 10px #ddd !important;
+      transition: all 0.3s ease;
+    }
+    /* our section end  */
+
+    /* we-are section start  */
+    #we-are {
+      background-color: rgb(7, 197, 172);
+    }
+    .we-are-cont h3 {
+      font-size: 18px;
+    }
+    .we-are-cont p {
+      margin-left: 33px;
+    }
+    .we-are-cont h3 i {
+      margin-right: 10px;
+    }
+    .we-img img {
+      height: 33rem;
+    }
+    /* we-are section End  */
+    /* news section start  */
+    #news-section {
+      position: relative;
+    }
+    .news-title h4 {
+      color: rgb(7, 197, 172);
+    }
+    .news-img01 {
+      z-index: -1;
+      position: absolute;
+      background-image: url(../images/experience.png);
+      background-repeat: no-repeat;
+      bottom: 0%;
+      width: 16%;
+      height: 28rem;
+      left: 0;
+    }
+    .card02 a {
+      background-color: rgb(7, 197, 172);
+      color: #fff;
+    }
+    /* news section End */
+    /* testionials-section start  */
+    #testionials-section {
+      background-image: url(../images/124.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 100%;
+      height: auto;
+    }
+
+    /* testionials-section End  */
+    /* clients-section start  */
+    .project-title .sm-title {
+      color: rgb(7, 197, 172);
+      font-style: italic;
+      font-size: 20px;
+    }
+    .logo-panel img {
+      width: 100%;
+      margin: 10px 20px;
+      opacity: 0.5;
+      border: 1px solid transparent;
+    }
+    .logo-panel img:hover {
+      border: 1px solid rgb(7, 197, 172);
+      transition: all 0.3s ease;
+      opacity: 1;
+    }
+    /* clients-section End  */
+    /* callto-action section start  */
+    .callto-action {
+      background-color: tomato;
+      color: #fff;
+      font-style: italic;
+    }
+
+    /* footer section start  */
+
+    .footer-widget h2 {
+      color: #c5c5c5;
+      font-size: 17px;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      margin: 0 0 15px;
+      font-size: 15px;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+    }
+    .footer-widget p {
+      font-size: 14px;
+      color: #6e6e6e;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 400;
+      line-height: 29px;
+      margin: 0 0 10px;
+    }
+
+    .footer-widget .social-links li a {
+      color: #777575;
+      background-color: #2f2f2f;
+      box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.1);
+      transition: all 0.3s;
+      text-align: center;
+      border-radius: 50%;
+      padding: 7px 10px 8px 10px;
+    }
+    .footer-widget .social-links li a:hover {
+      color: #fff;
+    }
+    .footer-widget .social-links {
+      padding: 0;
+    }
+    .footer-widget .social-links li {
+      display: inline-block;
+      margin: 10px 15px 0px 0px;
+    }
+    .footer-widget .link-list {
+      padding: 0;
+    }
+    .footer-widget .link-list a {
+      color: #8c8c8c;
+      text-transform: capitalize;
+      line-height: 30px;
+      text-decoration: none;
+    }
+
+    /* footer end  */
+
+    /* about page start  */
+
+    .page-about-section {
+      padding: 120px 0 65px;
+      background: url("../images/ban.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+    .page-about-section .col-md-12 {
+      padding: 40px 15px 0px;
+    }
+
+    .about-link01 ul li {
+      display: inline-block;
+      margin-right: 2px;
+    }
+
+    .about-link01 ul li a {
+      text-decoration: none;
+      transition: all 0.2s ease-in-out;
+      font-size: 13px;
+      font-family: "Open Sans", sans-serif;
+      color: #515252;
+      font-weight: 600;
+    }
+    #about-home {
+      position: relative;
+      width: 100%;
+    }
+    #about-home p {
+      font-size: 14px;
+      color: #6e6e6e;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 400;
+      line-height: 29px;
+      margin: 0 0 10px;
+    }
+    #about-home ul {
+      padding: 0;
+    }
+    #about-home ul li {
+      list-style-type: none;
+    }
+    #about-home ul li a {
+      font-family: Open Sans;
+      font-style: italic;
+      font-size: 13px;
+      color: #6e6e6e;
+      text-decoration: none;
+      font-weight: 400;
+    }
+
+    .aboo-01 {
+      background-image: url(../images/abt-bg.jpg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      position: absolute;
+      width: 24% !important;
+      height: 20vh;
+      right: 0;
+      bottom: 9px;
+    }
+    /* about page end  */
+
+    /* services-page-section start  */
+
+    .services-page-section {
+      padding: 8% 0px 30px 0px;
+    }
+    .services-page-section ul.side-navigation-list li {
+      list-style: none;
+      padding: 15px 25px;
+    }
+    .services-page-section ul.side-navigation-list li a {
+      text-decoration: none;
+      color: #222222;
+      font-size: 13px;
+      font-family: "Montserrat", sans-serif;
+      text-transform: uppercase;
+      transition: all 0.5s ease-in-out;
+    }
+    .services-page-section ul.side-navigation-list li a:hover {
+      color: #07c5ac;
+    }
+
+    .services-page-section .contact-info {
+      padding: 25px 30px;
+      padding-left: 0px;
+    }
+    .services-page-section .contact-info h2 {
+      color: #222222;
+      font-size: 17px;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      margin: 0 0 15px;
+      font-size: 14px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+    .services-page-section .contact-info ul.information-list li {
+      list-style-type: none;
+      overflow: hidden;
+      border-bottom: 1px solid #dddddd;
+      margin-bottom: 10px;
+      padding: 10px 0;
+    }
+    .services-page-section .contact-info ul.information-list li i {
+      color: #07c5ac;
+      font-size: 18px;
+      display: inline-block;
+      line-height: 24px;
+      margin-right: 10px;
+    }
+    .services-page-section .contact-info ul.information-list li span {
+      font-size: 13px;
+    }
+    .services-page-section .services-wrapp .services-post .btn.readmore {
+      font-weight: 500;
+      text-transform: uppercase;
+      color: #fff;
+      display: inline-block;
+      background: #07c5ac;
+      position: relative;
+      line-height: 40px;
+      border-radius: 3px;
+      margin-bottom: 27px;
+      font-size: 14px;
+      margin-top: 40px;
+      padding: 0px 27px;
+    }
+    .services-page-section .services-wrapp .services-post {
+      margin-bottom: 40px;
+    }
+    .services-page-section .services-wrapp .services-post h4 {
+      padding: 20px 0px;
+    }
+    /* services-page-section end  */
+    /* contact section start  */
+    #contact-form input[type="text"],
+    .comment-form input[type="text"],
+    #contact-form textarea,
+    .comment-form textarea {
+      width: 100%;
+      padding: 10px 20px;
+      border: 1px solid #dedede;
+      margin-bottom: 20px;
+      outline: none;
+      margin: 30px 0px 0px;
+      color: #666666;
+      font-size: 13px;
+
+      font-family: "Montserrat", sans-serif;
+    }
+
+    /* #contact-form input, */
+    #submit_contact {
+      font-weight: 500;
+      text-transform: uppercase;
+      color: #fff;
+      display: inline-block;
+      background: #07c5ac;
+      position: relative;
+      line-height: 40px;
+      border-radius: 3px;
+      margin-bottom: 27px;
+      font-size: 14px;
+      margin-top: 40px;
+      padding: 0px 27px;
+      border: none;
+    }
+    .contact-info p,
+    .contact-info h2 {
+      margin-top: 30px;
+      color: #6e6e6e;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 400;
+      line-height: 29px;
+      margin: 0 0 10px;
+    }
+    .contact-info p {
+      font-size: 14px;
+    }
+    .contact-section ul.information-list li {
+      list-style: none;
+      overflow: hidden;
+      border-bottom: 1px solid #dddddd;
+      margin-bottom: 10px;
+    }
+    .contact-section ul.information-list li i {
+      float: left;
+      color: #222222;
+      font-size: 13px;
+      display: inline-block;
+      line-height: 24px;
+    }
+    .contact-section ul.information-list li span {
+      display: block;
+      font-size: 14px;
+      color: #666666;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 400;
+      line-height: 24px;
+      margin: 0 0 10px;
+      margin-bottom: 8px;
+      margin-left: 25px;
+    }
+
+    /* Default image styling */
+    img {
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      object-fit: cover;
+    }
+
+    /* Responsive image styles */
+    @media screen and (max-width: 1024px) {
+      img {
+        max-width: 90%;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      img {
+        max-width: 80%;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+      .home-btn .btn02,
+      .home-btn .btn01 {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+      #home-section {
+        height: auto;
+      }
+      .home-btn {
+        padding-bottom: 10%;
+      }
+    }
+
+    @media screen and (min-width: 320px) and (max-width: 767px) {
+      .navbar-brand {
+        width: 44%;
+      }
+      .home-img {
+        padding-top: 70px;
+      }
+      .home-img img {
+        height: auto;
+      }
+      .home-content {
+        margin-top: 5%;
+      }
+      .home-content h2 {
+        font-size: 40px;
+      }
+
+      #home-section {
+        height: auto;
+      }
+      .home-btn {
+        padding-bottom: 10%;
+      }
+      .logo-panel {
+        text-align: center;
+      }
+      .logo-panel img {
+        width: 60%;
+      }
+    }
+    @media screen and (min-width: 320px) and (max-width: 480px) {
+      .home-btn .btn01,
+      .home-btn .btn02 {
+        font-size: 12px;
+      }
+    }
+  </style>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="#"
+            ><img
+              style="width: 150px"
+              src="./assets/images/logos.png"
+              alt="///"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  onclick="showSection('home')"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="showSection('about')">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="showSection('services')"
+                  >Services</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="showSection('contact')">Contact</a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
-  </header>
- 
+      </nav>
+    </header>
 
     <div id="home" class="section active">
       <section id="home-section" class="home-section01">
@@ -61,7 +604,11 @@
           <div class="row">
             <div class="col-sm-12 col-md-6">
               <div class="home-img">
-                <img src="./assets/images/slide2-img.png" alt="//" class="w-100" />
+                <img
+                  src="./assets/images/slide2-img.png"
+                  alt="//"
+                  class="w-100"
+                />
               </div>
             </div>
             <div class="col-sm-12 col-md-6">
@@ -75,9 +622,18 @@
                   Infrastructure maintenance
                 </p>
                 <div class="home-btn mt-4">
-                  <a class="btn btn01 text-capitalize fw-bold text-light" href="#" role="button"><i
-                      class="fa-solid fa-share me-2"></i>learn More</a>
-                  <a class="btn btn02 text-capitalize fw-bold ms-3" href="#" role="button">learn More</a>
+                  <a
+                    class="btn btn01 text-capitalize fw-bold text-light"
+                    href="#"
+                    role="button"
+                    ><i class="fa-solid fa-share me-2"></i>learn More</a
+                  >
+                  <a
+                    class="btn btn02 text-capitalize fw-bold ms-3"
+                    href="#"
+                    role="button"
+                    >learn More</a
+                  >
                 </div>
               </div>
             </div>
@@ -94,40 +650,84 @@
           </div>
           <div class="row mt-4">
             <div class="col-sm-12 col-md-4">
-              <div class="card card01 text-center shadow-sm p-3 mb-5 bg-body rounded border-0">
-                <img src="./assets/images/sandeep yadav_files/icon1.png" class="card-img-top w-25 m-auto" alt="..." />
+              <div
+                class="card card01 text-center shadow-sm p-3 mb-5 bg-body rounded border-0"
+              >
+                <img
+                  src="./assets/images/sandeep yadav_files/icon1.png"
+                  class="card-img-top w-25 m-auto"
+                  alt="..."
+                />
                 <div class="card-body">
                   <h5 class="card-title mb-3">Installations</h5>
-                  <p class="card-text" style="text-align: justify;">
-                    Proper electrical wire size is critical to any electrical wire installation. The American Wire Gauge (AWG) system relates to the wire's current-carrying capacity, or how much amperage it can safely handle. When choosing the right wire, you must consider the gauge, the wire capacity, and its intended use.
+                  <p class="card-text" style="text-align: justify">
+                    Proper electrical wire size is critical to any electrical
+                    wire installation. The American Wire Gauge (AWG) system
+                    relates to the wire's current-carrying capacity, or how much
+                    amperage it can safely handle. When choosing the right wire,
+                    you must consider the gauge, the wire capacity, and its
+                    intended use.
                   </p>
 
-                  <a class="btn btn-info text-uppercase px-3 text-light" href="#" role="button">Know More</a>
+                  <a
+                    class="btn btn-info text-uppercase px-3 text-light"
+                    href="#"
+                    role="button"
+                    >Know More</a
+                  >
                 </div>
               </div>
             </div>
             <div class="col-sm-12 col-md-4">
-              <div class="card card01 text-center shadow-sm p-3 mb-5 bg-body rounded border-0">
-                <img src="./assets/images/sandeep yadav_files/icon2.png" class="card-img-top w-25 m-auto" alt="..." />
+              <div
+                class="card card01 text-center shadow-sm p-3 mb-5 bg-body rounded border-0"
+              >
+                <img
+                  src="./assets/images/sandeep yadav_files/icon2.png"
+                  class="card-img-top w-25 m-auto"
+                  alt="..."
+                />
                 <div class="card-body">
                   <h5 class="card-title mb-3">Electrical Safety</h5>
-                  <p class="card-text" style="text-align: justify;">
-                    Fire alarm and detection systems. Smart fire safety for buildings and challenging applications. Look for the fire detection solution that fits all your needs
+                  <p class="card-text" style="text-align: justify">
+                    Fire alarm and detection systems. Smart fire safety for
+                    buildings and challenging applications. Look for the fire
+                    detection solution that fits all your needs
                   </p>
 
-                  <a class="btn btn-danger text-uppercase px-3" href="#" role="button">Know More</a>
+                  <a
+                    class="btn btn-danger text-uppercase px-3"
+                    href="#"
+                    role="button"
+                    >Know More</a
+                  >
                 </div>
               </div>
             </div>
             <div class="col-sm-12 col-md-4">
-              <div class="card  card01 text-center shadow-sm p-3 mb-5 bg-body rounded border-0">
-                <img src="./assets/images/sandeep yadav_files/icon3.png" class="card-img-top w-25 m-auto" alt="..." />
+              <div
+                class="card card01 text-center shadow-sm p-3 mb-5 bg-body rounded border-0"
+              >
+                <img
+                  src="./assets/images/sandeep yadav_files/icon3.png"
+                  class="card-img-top w-25 m-auto"
+                  alt="..."
+                />
                 <div class="card-body">
                   <h5 class="card-title mb-3">Lighting</h5>
-                  <p class="card-text" style="text-align: justify;">
-                    electrical aspect of installing a light fixture, the task is pretty straightforward. The most important step is to make sure that power to the junction box has been cut at the breaker, and be sure to confirm that it’s off using a voltage tester.
+                  <p class="card-text" style="text-align: justify">
+                    electrical aspect of installing a light fixture, the task is
+                    pretty straightforward. The most important step is to make
+                    sure that power to the junction box has been cut at the
+                    breaker, and be sure to confirm that it’s off using a
+                    voltage tester.
                   </p>
-                  <a class="btn btn-success text-uppercase px-3" href="#" role="button">Know More</a>
+                  <a
+                    class="btn btn-success text-uppercase px-3"
+                    href="#"
+                    role="button"
+                    >Know More</a
+                  >
                 </div>
               </div>
             </div>
@@ -145,38 +745,42 @@
               <div class="about-content py-5 text-light">
                 <h4 class="fw-bold fst-italic mb-1 text-light">All about us</h4>
                 <h2 class="fs-1 fw-bolder">Who we are</h2>
-              
+
                 <div class="we-are-cont">
                   <h3>
                     <i class="fa fa-check" aria-hidden="true"></i> WE ARE
                     PASSIONATE
                   </h3>
                   <p>
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur!
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur!
                   </p>
                   <h3>
                     <i class="fa fa-check" aria-hidden="true"></i> HONEST AND
                     DEPENDABLE
                   </h3>
                   <p>
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur!
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur!
                   </p>
                   <h3>
-                    <i class="fa fa-check" aria-hidden="true"></i> Call Us Today -
-                  +91 - 141 492 0232 - We Answer Our Phones 24/7
+                    <i class="fa fa-check" aria-hidden="true"></i> Call Us Today
+                    - +91 - 141 492 0232 - We Answer Our Phones 24/7
                   </h3>
                   <p>
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur!
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur!
                   </p>
                 </div>
               </div>
             </div>
             <div class="col-sm-12 col-md-6">
               <div class="we-img">
-                <img src="./assets/images/who-img.jpg" alt="////" class="w-100" />
+                <img
+                  src="./assets/images/who-img.jpg"
+                  alt="////"
+                  class="w-100"
+                />
               </div>
             </div>
           </div>
@@ -198,8 +802,14 @@
           </div>
           <div class="row mt-4">
             <div class="col-sm-12 col-md-4">
-              <div class="card card02 text-center shadow-sm p-3 mb-5 bg-body rounded border-0">
-                <img src="./assets/images/ser1.jpg" class="card-img-top w-100" alt="..." />
+              <div
+                class="card card02 text-center shadow-sm p-3 mb-5 bg-body rounded border-0"
+              >
+                <img
+                  src="./assets/images/ser1.jpg"
+                  class="card-img-top w-100"
+                  alt="..."
+                />
                 <div class="card-body mt-2">
                   <h5 class="card-title mb-3">Installations</h5>
                   <p class="card-text">
@@ -207,34 +817,52 @@
                     card's content.
                   </p>
 
-                  <a class="btn text-uppercase px-3" href="#" role="button">Know More</a>
+                  <a class="btn text-uppercase px-3" href="#" role="button"
+                    >Know More</a
+                  >
                 </div>
               </div>
             </div>
             <div class="col-sm-12 col-md-4">
-              <div class="card card02 text-center shadow-sm p-3 mb-5 bg-body rounded border-0">
-                <img src="./assets/images/ser2.jpg" class="card-img-top w-100" alt="..." />
+              <div
+                class="card card02 text-center shadow-sm p-3 mb-5 bg-body rounded border-0"
+              >
+                <img
+                  src="./assets/images/ser2.jpg"
+                  class="card-img-top w-100"
+                  alt="..."
+                />
                 <div class="card-body mt-2">
                   <h5 class="card-title mb-3">Electrical Safety</h5>
                   <p class="card-text">
-                    Some quick example text to build on the card title and make up
-                    the bulk .
+                    Some quick example text to build on the card title and make
+                    up the bulk .
                   </p>
 
-                  <a class="btn text-uppercase px-3" href="#" role="button">Know More</a>
+                  <a class="btn text-uppercase px-3" href="#" role="button"
+                    >Know More</a
+                  >
                 </div>
               </div>
             </div>
             <div class="col-sm-12 col-md-4">
-              <div class="card card02 text-center shadow-sm p-3 mb-5 bg-body rounded border-0">
-                <img src="./assets/images/ser3.jpg" class="card-img-top w-100" alt="..." />
+              <div
+                class="card card02 text-center shadow-sm p-3 mb-5 bg-body rounded border-0"
+              >
+                <img
+                  src="./assets/images/ser3.jpg"
+                  class="card-img-top w-100"
+                  alt="..."
+                />
                 <div class="card-body mt-2">
                   <h5 class="card-title mb-3">Lighting</h5>
                   <p class="card-text">
-                    Some quick example text to build on the card title and make up
-                    the bulk of the
+                    Some quick example text to build on the card title and make
+                    up the bulk of the
                   </p>
-                  <a class="btn text-uppercase px-3" href="#" role="button">Know More</a>
+                  <a class="btn text-uppercase px-3" href="#" role="button"
+                    >Know More</a
+                  >
                 </div>
               </div>
             </div>
@@ -244,8 +872,6 @@
       </section>
       <!-- news section End -->
       <!-- TESTIMONIALS section start  -->
-  
-
 
       <section class="pad-tb-40 callto-action py-3">
         <div class="container">
@@ -254,8 +880,8 @@
             <div class="col-sm-12">
               <div class="callto-action text-center">
                 <h3 class="pt-2">
-                  Need a copy of this beautiful Html5 so what are you waiting? ><a href="#" class="btn ms-3 bg-light">Buy
-                    now</a>
+                  Need a copy of this beautiful Html5 so what are you waiting?
+                  ><a href="#" class="btn ms-3 bg-light">Buy now</a>
                 </h3>
               </div>
             </div>
@@ -266,449 +892,525 @@
         <!-- Container -->
       </section>
       <!-- callto-action sectin End  -->
-
-
     </div>
 
-  <div id="contact" class="section">
-    <section class="page-about-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="about-link01 d-flex justify-content-between align-items-center">
-              <h2>Contacts</h2>
-              <ul class="page-depth">
-                <li><a href="index.html">Home /</a></li>
-                <li><a href="contact.html">Contact</a></li>
-              </ul>
+    <div id="contact" class="section">
+      <section class="page-about-section"  style="background-color: #cecece;">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div
+                class="about-link01 d-flex justify-content-between align-items-center"
+              >
+                <h2>Contacts</h2>
+                <ul class="page-depth">
+                  <li><a href="index.html">Home /</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- about page section End  / -->
-    <!-- contacts section start  -->
-    <section class="contact-section py-5">
-      <div class="container">
-        <div class="out-title text-center">
-          <h4 class="fw-bold fst-italic mb-3">Latest updates</h4>
-          <h2 class="fw-bolder mb-3">GET IN TOUCH</h2>
-          <p class="text-secondary">
-            Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa <br />
-            qui officia deserunt mollit anim id est laborum.
-          </p>
-        </div>
-        <div class="row">
-          
-          <div class="col-md-12">
-            <div class="contact-info">
-              <h2>Contact Info</h2>
-              <!-- <p>
+      </section>
+      <!-- about page section End  / -->
+      <!-- contacts section start  -->
+      <section class="contact-section py-5">
+        <div class="container">
+          <div class="out-title text-center">
+            <h4 class="fw-bold fst-italic mb-3">Latest updates</h4>
+            <h2 class="fw-bolder mb-3">GET IN TOUCH</h2>
+            <p class="text-secondary">
+              Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+              cupidatat non proident, sunt in culpa <br />
+              qui officia deserunt mollit anim id est laborum.
+            </p>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="contact-info">
+                <h2>Contact Info</h2>
+                <!-- <p>
                 You can contact or visit us in our office from Monday to Friday
                 from 8:00 - 17:00
               </p> -->
-              <p>
+                <p>
                   36A, Vishnu Vihar Colony, Behind HIA School, Dhawas road,
                   Heerapura, Jaipur (Raj.) 302021
                 </p>
-              <ul class="information-list">
-                <li>
-                  <i class="fa fa-map-marker"></i><span>36A, Vishnu Vihar Colony, Behind HIA School, Dhawas road, Heerapura, Jaipur (Raj.) 302021</span>
-                </li>
-                <li>
-                  <i class="fa fa-phone"></i><span>+91 141 492 0232</span><span>+91 8005736471</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- contact section end  -->
-    <!-- callto-action sectin start  -->
-    <section class="pad-tb-40 callto-action py-3">
-      <div class="container">
-        <div class="row">
-          <!-- Column -->
-          <div class="col-sm-12">
-            <div class="callto-action text-center">
-              <h3 class="pt-2">
-                Need a copy of this beautiful Html5 so what are you waiting? ><a href="#" class="btn ms-3 bg-light">Buy
-                  now</a>
-              </h3>
-            </div>
-          </div>
-          <!-- Column -->
-        </div>
-        <!-- row -->
-      </div>
-      <!-- Container -->
-    </section>
-    <!-- callto-action sectin End  -->
-  </div>
-
-  <div id="services" class="section">
-    <section class="page-about-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="about-link01 d-flex justify-content-between align-items-center">
-              <h2>Services</h2>
-              <ul class="page-depth">
-                <li><a href="index.html">Home /</a></li>
-                <li><a href="services.html">Services</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- about page section End  / -->
-    <!-- services section start  -->
-    <section class="services-page-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3">
-            <div class="side-navigation">
-              <ul class="side-navigation-list">
-                <li><a href="#">Ceiling Fans</a></li>
-                <li><a href="#">Circuits &amp; Wiring</a></li>
-                <li><a href="#">Generators</a></li>
-                <li><a href="#">Lighting</a></li>
-                <li><a href="#">Main Electrical Panel</a></li>
-                <li><a href="#">Smoke Detectors</a></li>
-              </ul>
-              <div class="contact-info">
-                <h2>Contact Info</h2>
                 <ul class="information-list">
                   <li>
-                    <i class="fa-solid fa-location-dot"></i><span>36A, Vishnu Vihar Colony, Behind HIA School, Dhawas road, Heerapura, Jaipur (Raj.) 302021</span>
+                    <i class="fa fa-map-marker"></i
+                    ><span
+                      >36A, Vishnu Vihar Colony, Behind HIA School, Dhawas road,
+                      Heerapura, Jaipur (Raj.) 302021</span
+                    >
                   </li>
                   <li>
-                    <i class="fa-solid fa-phone"></i><span>+91 - 141 492 0232</span><span>+91 8005736471</span>
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-envelope"></i><a href="#">Manvienterprises155@gmail.com
-
-                    </a>
+                    <i class="fa fa-phone"></i><span>+91 141 492 0232</span
+                    ><span>+91 8005736471</span>
                   </li>
                 </ul>
               </div>
             </div>
           </div>
-          <div class="col-md-9 white-right">
-            <div class="services-wrapp">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="services-post  shadow p-3 mb-5 bg-body-tertiary rounded">
-                    <img src="./assets/images/service1.jpg" alt="" />
-                    <h4>Maintain data center</h4>
-                    <p>
-                      Maintenance can be either planned in performed as emergency repairs, which may require temporarily
-                      taking systems offline. The scope of maintenance covers electrical and cooling systems,
-                      telecommunications cables, network infrastructure, IT equipment
-                    </p>
-                    <a class="btn readmore" href="#">Read More</a>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="services-post  shadow p-3 mb-5 bg-body-tertiary rounded">
-                    <img src="./assets/images/service2.jpg" alt="" />
-                    <h4>Electrical equipment maintenance</h4>
-                    <p>
-                      Electrical maintenance is a method of ensuring that electrical equipment remains in perfect
-                      working condition. It involves checking, testing, & repairing electrical equipment as needed to
-                      avoid faults that could result in a loss of power (or) an electrical fire.
-                    </p>
-                    <a class="btn readmore" href="#">Read More</a>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="services-post  shadow p-3 mb-5 bg-body-tertiary rounded">
-                    <img src="./assets/images/service3.jpg" alt="" />
-                    <h4>Electrical installation</h4>
-                    <p>
-                      Proper electrical wire size is critical to any electrical wire installation. The American Wire
-                      Gauge (AWG) system relates to the wire's current-carrying capacity, or how much amperage it can
-                      safely handle. When choosing the right wire, you must consider the gauge, the wire capacity, and
-                      its intended use.
-                    </p>
-                    <a class="btn readmore" href="#">Read More</a>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="services-post  shadow p-3 mb-5 bg-body-tertiary rounded">
-                    <img src="./assets/images/service4.jpg" alt="" />
-                    <h4>UPS (Uninterruptible Power Supply)</h4>
-                    <p>
-                      An uninterruptible power supply ( UPS) or uninterruptible power source is a type of continual
-                      power system that provides automated backup electric power to a load when the input power source
-                      or mains power fails
-                    </p>
-                    <a class="btn readmore" href="building.html">Read More</a>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="services-post  shadow p-3 mb-5 bg-body-tertiary rounded">
-                    <img src="./assets/images/service5.jpg" alt="" />
-                    <h4>Security system</h4>
-                    <p>
-                      Fire alarm and detection systems. Smart fire safety for buildings and challenging applications.
-                      Look for the fire detection solution that fits all your needs
-                    </p>
-                    <a class="btn readmore" href="#">Read More</a>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="services-post  shadow p-3 mb-5 bg-body-tertiary rounded">
-                    <img src="./assets/images/service6.jpg" alt="" />
-                    <h4>Infrastructure maintenance
-                    </h4>
-                    <p>
-                      The World Bank Group’s report Well Maintained: Economic Benefits from more Reliable and Resilient
-                      Infrastructure effectively documents how good and timely infrastructure maintenance boosts
-                      prosperity, enabling growth and well-being of people, firms, and economic systems.
-                    </p>
-                    <a class="btn readmore" href="#">Read More</a>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="services-post  shadow p-3 mb-5 bg-body-tertiary rounded">
-                    <img src="https://manvi-enterprises-electricians.vercel.app/static/media/LIGHT.762b89914d03152516da.jpg" alt="" />
-                    <h4>Lighting installation                    </h4>
-                    <p>
-                      electrical aspect of installing a light fixture, the task is pretty straightforward. The most important step is to make sure that power to the junction box has been cut at the breaker, and be sure to confirm that it’s off using a voltage tester.
-                    </p>
-                    <a class="btn readmore" href="#">Read More</a>
-                  </div>
-                </div>
-              
+        </div>
+      </section>
+      <!-- contact section end  -->
+      <!-- callto-action sectin start  -->
+      <section class="pad-tb-40 callto-action py-3">
+        <div class="container">
+          <div class="row">
+            <!-- Column -->
+            <div class="col-sm-12">
+              <div class="callto-action text-center">
+                <h3 class="pt-2">
+                  Need a copy of this beautiful Html5 so what are you waiting?
+                  ><a href="#" class="btn ms-3 bg-light">Buy now</a>
+                </h3>
               </div>
             </div>
+            <!-- Column -->
           </div>
+          <!-- row -->
         </div>
-      </div>
-    </section>
-    <!-- services section End  -->
-
-    <!-- callto-action sectin start  -->
-    <section class="pad-tb-40 callto-action py-3">
-      <div class="container">
-        <div class="row">
-          <!-- Column -->
-          <div class="col-sm-12">
-            <div class="callto-action text-center">
-              <h3 class="pt-2">
-                Need a copy of this beautiful Html5 so what are you waiting? ><a href="#" class="btn ms-3 bg-light">Buy
-                  now</a>
-              </h3>
-            </div>
-          </div>
-          <!-- Column -->
-        </div>
-        <!-- row -->
-      </div>
-      <!-- Container -->
-    </section>
-  </div>
-
-  <div id="about" class="section">
-    <section class="page-about-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="about-link01 d-flex justify-content-between align-items-center">
-              <h2>About Us</h2>
-              <ul class="page-depth">
-                <li><a href="index.html">Home /</a></li>
-                <li><a href="about.html">About us</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- about page section End  / -->
-    <!-- about home setion start  -->
-    <section id="about-home" class="py-5">
-      <div class="container">
-        <div class="out-title text-center">
-          <h4 class="fw-bold fst-italic mb-3">All about us</h4>
-          <h2 class="fw-bolder mb-3">WHO WE ARE</h2>
-        
-        </div>
-        <div class="row pt-5">
-          <div class="col-md-5">
-            <img class="w-auto" src="./assets/images/about-us.jpg" alt="" />
-          </div>
-          <div class="col-md-7">
-          
-            <p style="color: rgb(63, 62, 62);">
-             <span class="" style="font-weight: 900; font: bold;color: black;"> Manvi Enterprises</span> is a leading provider of comprehensive electrical maintenance and facility management
-              services. We specialize in maintaining data centers, electrical equipment, and infrastructure for large
-              and medium enterprises. Our expertise extends to various areas, including: Electrical Maintenance and
-              Facility Management: Ensuring optimal performance and longevity of electrical systems. Data Center
-              Maintenance: Providing end-to-end maintenance for data centers. Electrical Installations and Wiring:
-              Implementing high-quality electrical installations and wiring solutions. UPS and Smart Racks: Installing
-              and maintaining uninterruptible power supplies (UPS) and smart rack solutions. HVAC Systems: Installing
-              and maintaining heating, ventilation, and air conditioning (HVAC) systems. Security Systems: Implementing
-              and maintaining security solutions, including fire panels, fire suppression systems, access control
-              systems, and VESDA (Very Early Smoke Detection Apparatus). Rodent Control Systems: Ensuring a pest-free
-              environment for sensitive areas. Infrastructure Maintenance: Maintaining and upgrading infrastructure to
-              meet the highest standards. Lighting Installation: Installing efficient and effective lighting solutions.
-              Hardware Installation and IT Networks: Setting up and maintaining IT networks and switches. DG and LT/HT
-              Panels: Installing and maintaining diesel generators (DG) and low tension/high tension (LT/HT) panels.Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            <ul>
-              <li>
-                <a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Small &amp;
-                  Large Buildings</a>
-              </li>
-              <li>
-                <a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Elegant
-                  Garden</a>
-              </li>
-              <li>
-                <a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Perfect
-                  Projectings</a>
-              </li>
-              <li>
-                <a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Energy Repair</a>
-              </li>
-              <li>
-                <a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Roads &amp;
-                  Paths</a>
-              </li>
-            </ul>
-          </div>
-          <div class="aboo-01"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- about home setion start  -->
-    <!-- callto-action sectin start  -->
-    <section class="pad-tb-40 callto-action py-3">
-      <div class="container">
-        <div class="row">
-          <!-- Column -->
-          <div class="col-sm-12">
-            <div class="callto-action text-center">
-              <h3 class="pt-2">
-                Need a copy of this beautiful Html5 so what are you waiting? ><a href="#" class="btn ms-3 bg-light">Buy
-                  now</a>
-              </h3>
-            </div>
-          </div>
-          <!-- Column -->
-        </div>
-        <!-- row -->
-      </div>
-      <!-- Container -->
-    </section>
-    <!-- callto-action sectin End  -->
-  </div>
-
-  <footer class="py-5 bg-dark">
-    <div class="up-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3">
-            <div class="footer-widget">
-              <h2>About Us</h2>
-              <p>
-              <b>Manvi Enterprises</b> is a leading provider of comprehensive electrical maintenance and facility management services.
-              </p>
-              <ul class="social-links">
-                <li>
-                  <a target="_blank" href=""><i class="fa-brands fa-twitter"></i></a>
-                </li>
-                <li>
-                  <a target="_blank" href=""><i class="fa-brands fa-facebook"></i></a>
-                </li>
-                <li>
-                  <a target="_blank" href=""><i class="fa-brands fa-linkedin"></i></a>
-                </li>
-
-                <li>
-                  <a target="_blank" href="#"><i class="fa-brands fa-instagram"></i></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="footer-widget">
-              <h2>Our Services</h2>
-              <ul class="link-list">
-                <li><a href="#">Ceiling Fans</a></li>
-                <li><a href="#">Circuits &amp; Wiring</a></li>
-                <li><a href="#">Generators</a></li>
-                <li><a href="#">Lighting</a></li>
-                <li><a href="#">Main Electrical Panel</a></li>
-                <li><a href="#">Smoke Detectors</a></li>
-                <li><a href="#">Sub Panel</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="footer-widget">
-              <h2>Quick Links</h2>
-              <ul class="link-list">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Our Services</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="#">Contact Us</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="footer-widget info-widget">
-              <h2>Info</h2>
-              <p class="first-par">
-                You can contact or visit us during working time.
-              </p>
-              <p><span>Tel: </span> 141 492 0232</p>
-              <p><span>Email: </span> Manvienterprises155@gmail.com
-
-              </p>
-              <!-- <p><span>Working Hours: </span> 8:00 a.m - 17:00 a.m</p> -->
-            </div>
-          </div>
-        </div>
-      </div>
+        <!-- Container -->
+      </section>
+      <!-- callto-action sectin End  -->
     </div>
-  </footer>
 
-  <script>
-    function showSection(sectionId) {
-      // Hide all sections
-      document.querySelectorAll('.section').forEach(section => {
-        section.style.display = 'none';
-      });
+    <div id="services" class="section">
+      <section class="page-about-section"  style="background-color: #cecece;">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div
+                class="about-link01 d-flex justify-content-between align-items-center"
+              >
+                <h2>Services</h2>
+                <ul class="page-depth">
+                  <li><a href="index.html">Home /</a></li>
+                  <li><a href="services.html">Services</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- about page section End  / -->
+      <!-- services section start  -->
+      <section class="services-page-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="side-navigation">
+                <ul class="side-navigation-list">
+                  <li><a href="#">Ceiling Fans</a></li>
+                  <li><a href="#">Circuits &amp; Wiring</a></li>
+                  <li><a href="#">Generators</a></li>
+                  <li><a href="#">Lighting</a></li>
+                  <li><a href="#">Main Electrical Panel</a></li>
+                  <li><a href="#">Smoke Detectors</a></li>
+                </ul>
+                <div class="contact-info">
+                  <h2>Contact Info</h2>
+                  <ul class="information-list">
+                    <li>
+                      <i class="fa-solid fa-location-dot"></i
+                      ><span
+                        >36A, Vishnu Vihar Colony, Behind HIA School, Dhawas
+                        road, Heerapura, Jaipur (Raj.) 302021</span
+                      >
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-phone"></i
+                      ><span>+91 - 141 492 0232</span
+                      ><span>+91 8005736471</span>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-envelope"></i
+                      ><a href="#">Manvienterprises155@gmail.com </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-9 white-right">
+              <div class="services-wrapp">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div
+                      class="services-post shadow p-3 mb-5 bg-body-tertiary rounded"
+                    >
+                      <img src="./assets/images/service1.jpg" alt="" />
+                      <h4>Maintain data center</h4>
+                      <p>
+                        Maintenance can be either planned in performed as
+                        emergency repairs, which may require temporarily taking
+                        systems offline. The scope of maintenance covers
+                        electrical and cooling systems, telecommunications
+                        cables, network infrastructure, IT equipment
+                      </p>
+                      <a class="btn readmore" href="#">Read More</a>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div
+                      class="services-post shadow p-3 mb-5 bg-body-tertiary rounded"
+                    >
+                      <img src="./assets/images/service2.jpg" alt="" />
+                      <h4>Electrical equipment maintenance</h4>
+                      <p>
+                        Electrical maintenance is a method of ensuring that
+                        electrical equipment remains in perfect working
+                        condition. It involves checking, testing, & repairing
+                        electrical equipment as needed to avoid faults that
+                        could result in a loss of power (or) an electrical fire.
+                      </p>
+                      <a class="btn readmore" href="#">Read More</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div
+                      class="services-post shadow p-3 mb-5 bg-body-tertiary rounded"
+                    >
+                      <img src="./assets/images/service3.jpg" alt="" />
+                      <h4>Electrical installation</h4>
+                      <p>
+                        Proper electrical wire size is critical to any
+                        electrical wire installation. The American Wire Gauge
+                        (AWG) system relates to the wire's current-carrying
+                        capacity, or how much amperage it can safely handle.
+                        When choosing the right wire, you must consider the
+                        gauge, the wire capacity, and its intended use.
+                      </p>
+                      <a class="btn readmore" href="#">Read More</a>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div
+                      class="services-post shadow p-3 mb-5 bg-body-tertiary rounded"
+                    >
+                      <img src="./assets/images/service4.jpg" alt="" />
+                      <h4>UPS (Uninterruptible Power Supply)</h4>
+                      <p>
+                        An uninterruptible power supply ( UPS) or
+                        uninterruptible power source is a type of continual
+                        power system that provides automated backup electric
+                        power to a load when the input power source or mains
+                        power fails
+                      </p>
+                      <a class="btn readmore" href="building.html">Read More</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div
+                      class="services-post shadow p-3 mb-5 bg-body-tertiary rounded"
+                    >
+                      <img src="./assets/images/service5.jpg" alt="" />
+                      <h4>Security system</h4>
+                      <p>
+                        Fire alarm and detection systems. Smart fire safety for
+                        buildings and challenging applications. Look for the
+                        fire detection solution that fits all your needs
+                      </p>
+                      <a class="btn readmore" href="#">Read More</a>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div
+                      class="services-post shadow p-3 mb-5 bg-body-tertiary rounded"
+                    >
+                      <img src="./assets/images/service6.jpg" alt="" />
+                      <h4>Infrastructure maintenance</h4>
+                      <p>
+                        The World Bank Group’s report Well Maintained: Economic
+                        Benefits from more Reliable and Resilient Infrastructure
+                        effectively documents how good and timely infrastructure
+                        maintenance boosts prosperity, enabling growth and
+                        well-being of people, firms, and economic systems.
+                      </p>
+                      <a class="btn readmore" href="#">Read More</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div
+                      class="services-post shadow p-3 mb-5 bg-body-tertiary rounded"
+                    >
+                      <img
+                        src="https://manvi-enterprises-electricians.vercel.app/static/media/LIGHT.762b89914d03152516da.jpg"
+                        alt=""
+                      />
+                      <h4>Lighting installation</h4>
+                      <p>
+                        electrical aspect of installing a light fixture, the
+                        task is pretty straightforward. The most important step
+                        is to make sure that power to the junction box has been
+                        cut at the breaker, and be sure to confirm that it’s off
+                        using a voltage tester.
+                      </p>
+                      <a class="btn readmore" href="#">Read More</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- services section End  -->
 
-      // Show the selected section
-      document.getElementById(sectionId).style.display = 'block';
-    }
+      <!-- callto-action sectin start  -->
+      <section class="pad-tb-40 callto-action py-3">
+        <div class="container">
+          <div class="row">
+            <!-- Column -->
+            <div class="col-sm-12">
+              <div class="callto-action text-center">
+                <h3 class="pt-2">
+                  Need a copy of this beautiful Html5 so what are you waiting?
+                  ><a href="#" class="btn ms-3 bg-light">Buy now</a>
+                </h3>
+              </div>
+            </div>
+            <!-- Column -->
+          </div>
+          <!-- row -->
+        </div>
+        <!-- Container -->
+      </section>
+    </div>
 
-    // Show home section by default
-    showSection('home');
-  </script>
-  <script src="./assets/js/main.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <div id="about" class="section">
+      <section class="page-about-section"  style="background-color: #cecece;">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div
+             
+                class="about-link01 d-flex justify-content-between align-items-center"
+              >
+                <h2>About Us</h2>
+                <ul class="page-depth">
+                  <li><a href="index.html">Home /</a></li>
+                  <li><a href="about.html">About us</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- about page section End  / -->
+      <!-- about home setion start  -->
+      <section id="about-home" class="py-5">
+        <div class="container">
+          <div class="out-title text-center">
+            <h4 class="fw-bold fst-italic mb-3">All about us</h4>
+            <h2 class="fw-bolder mb-3">WHO WE ARE</h2>
+          </div>
+          <div class="row pt-5">
+            <div class="col-md-5">
+              <img class="w-auto" src="./assets/images/about-us.jpg" alt="" />
+            </div>
+            <div class="col-md-7">
+              <p style="color: rgb(63, 62, 62)">
+                <span
+                  class=""
+                  style="font-weight: 900; font: bold; color: black"
+                >
+                  Manvi Enterprises</span
+                >
+                is a leading provider of comprehensive electrical maintenance
+                and facility management services. We specialize in maintaining
+                data centers, electrical equipment, and infrastructure for large
+                and medium enterprises. Our expertise extends to various areas,
+                including: Electrical Maintenance and Facility Management:
+                Ensuring optimal performance and longevity of electrical
+                systems. Data Center Maintenance: Providing end-to-end
+                maintenance for data centers. Electrical Installations and
+                Wiring: Implementing high-quality electrical installations and
+                wiring solutions. UPS and Smart Racks: Installing and
+                maintaining uninterruptible power supplies (UPS) and smart rack
+                solutions. HVAC Systems: Installing and maintaining heating,
+                ventilation, and air conditioning (HVAC) systems. Security
+                Systems: Implementing and maintaining security solutions,
+                including fire panels, fire suppression systems, access control
+                systems, and VESDA (Very Early Smoke Detection Apparatus).
+                Rodent Control Systems: Ensuring a pest-free environment for
+                sensitive areas. Infrastructure Maintenance: Maintaining and
+                upgrading infrastructure to meet the highest standards. Lighting
+                Installation: Installing efficient and effective lighting
+                solutions. Hardware Installation and IT Networks: Setting up and
+                maintaining IT networks and switches. DG and LT/HT Panels:
+                Installing and maintaining diesel generators (DG) and low
+                tension/high tension (LT/HT) panels.Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                commodo consequat. Duis aute irure dolor in reprehenderit in
+                voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                qui officia deserunt mollit anim id est laborum.
+              </p>
+              <ul>
+                <li>
+                  <a href="#" class=""
+                    ><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Small &amp;
+                    Large Buildings</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class=""
+                    ><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Elegant
+                    Garden</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class=""
+                    ><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Perfect
+                    Projectings</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class=""
+                    ><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Energy
+                    Repair</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class=""
+                    ><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Roads &amp;
+                    Paths</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="aboo-01"></div>
+          </div>
+        </div>
+      </section>
 
+      <!-- about home setion start  -->
+      <!-- callto-action sectin start  -->
+      <section class="pad-tb-40 callto-action py-3">
+        <div class="container">
+          <div class="row">
+            <!-- Column -->
+            <div class="col-sm-12">
+              <div class="callto-action text-center">
+                <h3 class="pt-2">
+                  Need a copy of this beautiful Html5 so what are you waiting?
+                  ><a href="#" class="btn ms-3 bg-light">Buy now</a>
+                </h3>
+              </div>
+            </div>
+            <!-- Column -->
+          </div>
+          <!-- row -->
+        </div>
+        <!-- Container -->
+      </section>
+      <!-- callto-action sectin End  -->
+    </div>
+
+    <footer class="py-5 bg-dark">
+      <div class="up-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="footer-widget">
+                <h2>About Us</h2>
+                <p>
+                  <b>Manvi Enterprises</b> is a leading provider of
+                  comprehensive electrical maintenance and facility management
+                  services.
+                </p>
+                <ul class="social-links">
+                  <li>
+                    <a target="_blank" href=""
+                      ><i class="fa-brands fa-twitter"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a target="_blank" href=""
+                      ><i class="fa-brands fa-facebook"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a target="_blank" href=""
+                      ><i class="fa-brands fa-linkedin"></i
+                    ></a>
+                  </li>
+
+                  <li>
+                    <a target="_blank" href="#"
+                      ><i class="fa-brands fa-instagram"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="footer-widget">
+                <h2>Our Services</h2>
+                <ul class="link-list">
+                  <li><a href="#">Ceiling Fans</a></li>
+                  <li><a href="#">Circuits &amp; Wiring</a></li>
+                  <li><a href="#">Generators</a></li>
+                  <li><a href="#">Lighting</a></li>
+                  <li><a href="#">Main Electrical Panel</a></li>
+                  <li><a href="#">Smoke Detectors</a></li>
+                  <li><a href="#">Sub Panel</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="footer-widget">
+                <h2>Quick Links</h2>
+                <ul class="link-list">
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">Our Services</a></li>
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">News</a></li>
+                  <li><a href="#">Contact Us</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="footer-widget info-widget">
+                <h2>Info</h2>
+                <p class="first-par">
+                  You can contact or visit us during working time.
+                </p>
+                <p><span>Tel: </span> 141 492 0232</p>
+                <p><span>Email: </span> Manvienterprises155@gmail.com</p>
+                <!-- <p><span>Working Hours: </span> 8:00 a.m - 17:00 a.m</p> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function showSection(sectionId) {
+        // Hide all sections
+        document.querySelectorAll(".section").forEach((section) => {
+          section.style.display = "none";
+        });
+
+        // Show the selected section
+        document.getElementById(sectionId).style.display = "block";
+      }
+
+      // Show home section by default
+      showSection("home");
+    </script>
+    <script src="./assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
